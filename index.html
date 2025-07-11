@@ -52,114 +52,122 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="py-20 md:py-32 max-w-screen-xl mx-auto px-6">
-        <h2 class="section-heading animate-on-scroll">Who I Am</h2>
-        <div class="card max-w-3xl mx-auto text-lg leading-relaxed text-gray-300 animate-on-scroll">
-            <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-6">
-                <!-- profile picture -->
-                <img src="assets/155N2YTfAaHGORx-e_hO94JlAbC255kENa_AWII7i1M-1536x2048.jpg" alt="Dante Munoz Profile" class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-teal-500 shadow-lg mb-6 md:mb-0 flex-none animate-on-scroll">
-                <p>So, who am I? I'm a seasoned e-commerce pro, having spent almost 10 years growing from customer support to a Senior Marketplace Operations Manager. I absolutely love diving deep into how online platforms work, making sure apps and themes play nice, and basically ensuring everything runs smoothly for merchants and partners. It's all about making digital experiences awesome!</p>
+    <section id="about" class="py-20 md:py-32">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="section-heading animate-on-scroll">Who I Am</h2>
+            <div class="card max-w-3xl mx-auto text-lg leading-relaxed text-gray-300 animate-on-scroll">
+                <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-6">
+                    <!-- profile picture -->
+                    <img src="assets/155N2YTfAaHGORx-e_hO94JlAbC255kENa_AWII7i1M-1536x2048.jpg" alt="Dante Munoz Profile" class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-teal-500 shadow-lg mb-6 md:mb-0 flex-none animate-on-scroll">
+                    <p>So, who am I? I'm a seasoned e-commerce pro, having spent almost 10 years growing from customer support to a Senior Marketplace Operations Manager. I absolutely love diving deep into how online platforms work, making sure apps and themes play nice, and basically ensuring everything runs smoothly for merchants and partners. It's all about making digital experiences awesome!</p>
+                </div>
+                <p>Outside of work, you'll definitely find me hitting the trails on my bike (or in my 4Runner!), drumming away, or just enjoying the great outdoors. I'm all about building cool stuff, solving tricky puzzles, and always learning something new. I believe in bringing that same passion and problem-solving spirit to every challenge, professional or personal!</p>
             </div>
-            <p>Outside of work, you'll definitely find me hitting the trails on my bike (or in my 4Runner!), drumming away, or just enjoying the great outdoors. I'm all about building cool stuff, solving tricky puzzles, and always learning something new. I believe in bringing that same passion and problem-solving spirit to every challenge, professional or personal!</p>
         </div>
     </section>
 
     <!-- My Journey (Work Experience) Section -->
-    <section id="journey" class="py-20 md:py-32 bg-gray-900">
-        <div class="max-w-screen-xl mx-auto px-6">
-            <h2 class="section-heading animate-on-scroll">My Professional Journey</h2>
-            <div class="grid lg:grid-cols-2 gap-10">
+    <section id="journey" class="py-20 md:py-32">
+        <div class="max-w-screen-xl mx-auto px-6 flex flex-col h-full">
+            <h2 class="section-heading animate-on-scroll flex-shrink-0">My Professional Journey</h2>
+            <div class="flex-grow overflow-y-auto pr-4"> <!-- Added pr-4 for scrollbar spacing -->
+                <div class="grid lg:grid-cols-2 gap-10">
 
-                <!-- Senior Marketplace Operations Manager -->
-                <div class="card animate-on-scroll">
-                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Senior Marketplace Operations Manager</h3>
-                    <p class="text-gray-400 mb-4">BigCommerce | Remote | June 2020 – July 2025</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Spearheaded the launch of ~45 apps & 12 themes annually, ensuring full compliance & functionality.</li>
-                        <li>Built out key internal review processes for Accessibility & Catalyst compatibility, boosting marketplace quality.</li>
-                        <li>Led weekly Jira triages for Partner Theme issues, streamlining resolutions with partners.</li>
-                        <li>Managed theme updates via GitHub & Launchbay, ensuring smooth production deployments.</li>
-                        <li>Served as SME for Stencil & Catalyst themes, handling ~70% of team's theme projects.</li>
-                        <li>Conducted granular UAT, proactively identifying & reporting bugs before deployment.</li>
-                        <li>Troubleshot & verified API calls (v2/v3/GraphQL), ensuring robust app/theme performance.</li>
-                    </ul>
-                </div>
+                    <!-- Senior Marketplace Operations Manager -->
+                    <div class="card animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">Senior Marketplace Operations Manager</h3>
+                        <p class="text-gray-400 mb-4">BigCommerce | Remote | June 2020 – July 2025</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Spearheaded the launch of ~45 apps & 12 themes annually, ensuring full compliance & functionality.</li>
+                            <li>Built out key internal review processes for Accessibility & Catalyst compatibility, boosting marketplace quality.</li>
+                            <li>Led weekly Jira triages for Partner Theme issues, streamlining resolutions with partners.</li>
+                            <li>Managed theme updates via GitHub & Launchbay, ensuring smooth production deployments.</li>
+                            <li>Served as SME for Stencil & Catalyst themes, handling ~70% of team's theme projects.</li>
+                            <li>Conducted granular UAT, proactively identifying & reporting bugs before deployment.</li>
+                            <li>Troubleshot & verified API calls (v2/v3/GraphQL), ensuring robust app/theme performance.</li>
+                        </ul>
+                    </div>
 
-                <!-- Product Support Engineer -->
-                <div class="card animate-on-scroll">
-                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Product Support Engineer</h3>
-                    <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | January 2018 – June 2020</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Acted as key liaison between Engineering & Merchants, translating complex tech issues.</li>
-                        <li>Collaborated directly with Product & Engineering to resolve platform bugs using Jira.</li>
-                        <li>Utilized Kibana 5, Tableau, Contentful, Algolia Search for advanced merchant/partner support.</li>
-                    </ul>
-                </div>
+                    <!-- Product Support Engineer -->
+                    <div class="card animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">Product Support Engineer</h3>
+                        <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | January 2018 – June 2020</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Acted as key liaison between Engineering & Merchants, translating complex tech issues.</li>
+                            <li>Collaborated directly with multiple Product and Engineering teams to report, troubleshoot, and resolve complex platform bugs and technical matters, leveraging extensive Jira experience.</li>
+                            <li>Utilized internal reporting and analytics tools including Kibana 5, Tableau, Contentful, and Algolia Search to investigate and address advanced merchant or partner support issues.</li>
+                        </ul>
+                    </div>
 
-                <!-- Tier 2 Support Representative -->
-                <div class="card animate-on-scroll">
-                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Tier 2 Support Representative</h3>
-                    <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | May 2016 – January 2018</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Resolved 30-50 escalated tickets weekly & handled priority calls for Enterprise Merchants.</li>
-                        <li>Provided expert technical support to Technical Partners (app developers) on v2/v3 APIs.</li>
-                    </ul>
-                </div>
+                    <!-- Tier 2 Support Representative -->
+                    <div class="card animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">Tier 2 Support Representative</h3>
+                        <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | May 2016 – January 2018</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Resolved 30-50 escalated, email-based support tickets weekly and priority phone calls from Enterprise-level Merchants, demonstrating advanced problem-solving and efficiency.</li>
+                            <li>Provided expert technical support to BigCommerce's Technical Partners (app developers), specifically addressing complex questions and issues related to v2/v3 APIs.</li>
+                        </ul>
+                    </div>
 
-                <!-- Tier 1 Support Representative -->
-                <div class="card animate-on-scroll">
-                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Tier 1 Support Representative</h3>
-                    <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | March 2015 – May 2016</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Managed 80-90 inbound support calls/day for diverse BigCommerce merchants.</li>
-                        <li>Maintained 97%+ NPS for issue resolution, showcasing excellent customer service.</li>
-                        <li>Reported platform bugs via Jira & utilized Salesforce for ticket management.</li>
-                    </ul>
+                    <!-- Tier 1 Support Representative -->
+                    <div class="card animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">Tier 1 Support Representative</h3>
+                        <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | March 2015 – May 2016</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Managed a high volume of inbound support calls (80-90 calls/day) for a diverse range of BigCommerce merchants, from small businesses to multi-million dollar enterprises.</li>
+                            <li>Consistently maintained a positive NPS of at least 97% satisfaction for issue resolution, reflecting exceptional customer service and problem-solving abilities.</li>
+                            <li>Reported and tracked platform bugs with the Engineering team via Jira, and utilized Salesforce for ticket management.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- My Toolkit (Skills) Section -->
-    <section id="skills" class="py-20 md:py-32 max-w-screen-xl mx-auto px-6">
-        <h2 class="section-heading animate-on-scroll">My Toolkit</h2>
-        <div class="grid md:grid-cols-2 gap-10 text-lg">
-            <div class="card animate-on-scroll">
-                <h3 class="text-2xl font-bold text-teal-400 mb-4">E-commerce & Platform Wizardry</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-300">
-                    <li>BigCommerce (SME: Stencil, Catalyst)</li>
-                    <li>Shopify (familiarity with platform functionality)</li>
-                    <li>Marketplace Management</li>
-                    <li>App & Theme Lifecycle Management (Review, Launch, Updates)</li>
-                    <li>User Acceptance Testing (UAT)</li>
-                    <li>Accessibility Compliance Auditing</li>
-                </ul>
-            </div>
-            <div class="card animate-on-scroll">
-                <h3 class="text-2xl font-bold text-teal-400 mb-4">Tech & Troubleshooting Superpowers</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-300">
-                    <li>APIs (BigCommerce v2/v3, GraphQL, RESTful)</li>
-                    <li>API Traffic Verification & Troubleshooting</li>
-                    <li>Jira (Advanced Proficiency)</li>
-                    <li>Salesforce (Sales & Service Cloud, Lightning)</li>
-                    <li>GitHub</li>
-                    <li>Kibana 5, Tableau, Internal Reporting Tools</li>
-                    <li>Contentful, Algolia Search</li>
-                    <li>Launchbay</li>
-                    <li>HTML, CSS, JavaScript (understanding for troubleshooting/UAT)</li>
-                </ul>
-            </div>
-            <div class="card md:col-span-2 animate-on-scroll">
-                <h3 class="text-2xl font-bold text-teal-400 mb-4">People & Process Power-Ups</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-300">
-                    <li>Complex Troubleshooting & Strategic Thinking</li>
-                    <li>Technical Liaison & Communication</li>
-                    <li>Cross-functional Collaboration</li>
-                    <li>Stakeholder & Partner Relationship Management</li>
-                    <li>Customer Service Excellence</li>
-                    <li>Process Development & Optimization</li>
-                    <li>Detail-Oriented Analysis</li>
-                </ul>
+    <section id="skills" class="py-20 md:py-32">
+        <div class="max-w-screen-xl mx-auto px-6 flex flex-col h-full">
+            <h2 class="section-heading animate-on-scroll flex-shrink-0">My Toolkit</h2>
+            <div class="flex-grow overflow-y-auto pr-4"> <!-- Added pr-4 for scrollbar spacing -->
+                <div class="grid md:grid-cols-2 gap-10 text-lg">
+                    <div class="card animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-4">E-commerce & Platform Wizardry</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>BigCommerce (SME: Stencil, Catalyst)</li>
+                            <li>Shopify (familiarity with platform functionality)</li>
+                            <li>Marketplace Management</li>
+                            <li>App & Theme Lifecycle Management (Review, Launch, Updates)</li>
+                            <li>User Acceptance Testing (UAT)</li>
+                            <li>Accessibility Compliance Auditing</li>
+                        </ul>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-4">Tech & Troubleshooting Superpowers</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>APIs (BigCommerce v2/v3, GraphQL, RESTful)</li>
+                            <li>API Traffic Verification & Troubleshooting</li>
+                            <li>Jira (Advanced Proficiency)</li>
+                            <li>Salesforce (Sales & Service Cloud, Lightning)</li>
+                            <li>GitHub</li>
+                            <li>Kibana 5, Tableau, Internal Reporting Tools</li>
+                            <li>Contentful, Algolia Search</li>
+                            <li>Launchbay</li>
+                            <li>HTML, CSS, JavaScript (understanding for troubleshooting/UAT)</li>
+                        </ul>
+                    </div>
+                    <div class="card md:col-span-2 animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-4">People & Process Power-Ups</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>Complex Troubleshooting & Strategic Thinking</li>
+                            <li>Technical Liaison & Communication</li>
+                            <li>Cross-functional Collaboration</li>
+                            <li>Stakeholder & Partner Relationship Management</li>
+                            <li>Customer Service Excellence</li>
+                            <li>Process Development & Optimization</li>
+                            <li>Detail-Oriented Analysis</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -185,7 +193,7 @@
                 <div class="card text-center animate-on-scroll">
                     <h3 class="text-2xl font-bold text-teal-400 mb-4">Drumming Since '03 🥁</h3>
                     <p class="mb-4 text-gray-300">
-                        I've been a drummer since I was 13, and it's a huge part of who I am. A pocket is my creative outlet, a way to express myself, and a fantastic way to unwind.
+                        I've been a drummer since I was 13, and it's a huge part of who I am. Laying down a beat is my creative outlet, a way to express myself, and a fantastic way to unwind.
                     </p>
                 </div>
             </div>
