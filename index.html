@@ -15,14 +15,23 @@
 
     <!-- Header & Navigation -->
     <header class="bg-gray-900 shadow-lg py-4">
-        <nav class="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
-            <h1 class="text-3xl font-extrabold text-teal-400 mb-2 sm:mb-0">Dante Munoz</h1>
-            <div class="space-x-4 text-lg">
-                <a href="#about" class="link-style">About</a>
-                <a href="#journey" class="link-style">My Journey</a>
-                <a href="#skills" class="link-style">My Toolkit</a>
-                <a href="#passions" class="link-style">My Adventures</a>
-                <a href="#contact" class="link-style">Connect</a>
+        <nav class="max-w-screen-xl mx-auto px-6 flex justify-between items-center">
+            <!-- Container for hamburger and title on small screens -->
+            <div class="flex items-center">
+                <!-- Hamburger Menu Button (visible on small screens only) -->
+                <button id="menu-toggle" class="sm:hidden text-teal-400 text-3xl focus:outline-none mr-4">
+                    ☰
+                </button>
+                <h1 class="text-3xl font-extrabold text-teal-400">Dante Munoz</h1>
+            </div>
+            
+            <!-- Navigation Links (hidden on small screens by default, flex on larger screens) -->
+            <div id="nav-links" class="hidden sm:flex flex-col sm:flex-row sm:space-x-4 text-lg mt-4 sm:mt-0 w-full sm:w-auto items-center">
+                <a href="#about" class="link-style py-2 sm:py-0">About</a>
+                <a href="#journey" class="link-style py-2 sm:py-0">My Journey</a>
+                <a href="#skills" class="link-style py-2 sm:py-0">My Toolkit</a>
+                <a href="#passions" class="link-style py-2 sm:py-0">My Adventures</a>
+                <a href="#contact" class="link-style py-2 sm:py-0">Connect</a>
             </div>
         </nav>
     </header>
@@ -163,20 +172,20 @@
                 <div class="card text-center animate-on-scroll">
                     <h3 class="text-2xl font-bold text-teal-400 mb-4">Cycling Obsession 🚴‍♂️</h3>
                     <p class="mb-4 text-gray-300">
-                        Whether it's hitting the gravel on my amazing **Hunt Carbon Aerodynamicist wheels** (on my **Rodeo Traildonkey 3.1** – my absolute favorite!), shredding trails on my **Yeti SB130**, or cruising fixed-gear style on my **State Undefeated Track frame**, I live for two wheels. It's where I find my flow and push my limits!
+                        Whether it's hitting the gravel, shredding trails, or cruising fixed-gear style, I live for two wheels. It's where I find my flow, push my limits, and connect with the world around me.
                     </p>
                     <a href="https://www.strava.com/athletes/6709492" target="_blank" class="link-style strava-link">See my rides on Strava!</a>
                 </div>
                 <div class="card text-center animate-on-scroll">
-                    <h3 class="text-2xl font-bold text-teal-400 mb-4">Overlanding & Outdoors ⛰️</h3>
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">Great Outdoors ⛰️</h3>
                     <p class="mb-4 text-gray-300">
-                        When I'm not on the bike, you'll often find me exploring off-grid. My 5th Gen 4Runner, outfitted with a sweet **Backwoods Adventure Mods front bumper**, is my trusty companion for getting out there. There's nothing quite like fresh air and wide-open spaces!
+                        When I'm not on the bike, you'll often find me exploring off-grid. There's nothing quite like fresh air, wide-open spaces, and the quiet of nature to reset and recharge.
                     </p>
                 </div>
                 <div class="card text-center animate-on-scroll">
                     <h3 class="text-2xl font-bold text-teal-400 mb-4">Drumming Since '03 🥁</h3>
                     <p class="mb-4 text-gray-300">
-                        I've been a drummer since I was 13, and it's a huge part of who I am. You'll usually find me laying down a beat with my trusty **Pro-Mark drumsticks** and **Evans drumheads**. It's my creative outlet and a great way to unwind!
+                        I've been a drummer since I was 13, and it's a huge part of who I am. A pocket is my creative outlet, a way to express myself, and a fantastic way to unwind.
                     </p>
                 </div>
             </div>
@@ -226,6 +235,29 @@
             animateElements.forEach(element => {
                 observer.observe(element);
             });
+
+            // --- New JavaScript for Mobile Menu Toggle ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('hidden');
+                    navLinks.classList.toggle('flex'); // Toggle flex to show/hide
+                });
+
+                // Close menu when a link is clicked (for mobile)
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Only close if the menu toggle is visible (i.e., we are on a mobile view)
+                        if (!menuToggle.classList.contains('hidden')) {
+                            navLinks.classList.add('hidden');
+                            navLinks.classList.remove('flex');
+                        }
+                    });
+                });
+            }
+            // --- End New JavaScript ---
         });
     </script>
 
