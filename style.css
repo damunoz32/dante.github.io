@@ -1,32 +1,208 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a202c; /* Deep charcoal/dark blue for background */
+    color: #e2e8f0; /* Light gray for main text */
+    line-height: 1.6;
+    /* New: Subtle animated background for the entire body */
+    background-image: radial-gradient(circle at center, rgba(74, 85, 104, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Size of the dots/pattern */
+    animation: backgroundPan 60s linear infinite; /* Slow, continuous movement */
+    overflow-x: hidden; /* Prevent horizontal scrollbar from animation */
+}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Deep charcoal/dark blue for background */
-            color: #e2e8f0; /* Light gray for main text */
-            line-height: 1.6;
-        }
-        .section-heading {
-            @apply text-4xl md:text-5xl font-extrabold text-center mb-12 text-teal-400 tracking-tight; /* Vibrant teal for headings */
-        }
-        .card {
-            @apply bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300 ease-in-out; /* Dark card, subtle border, hover effect */
-        }
-        .btn-primary {
-            @apply inline-block bg-teal-500 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-teal-400 transition-colors duration-300 shadow-lg; /* Vibrant button */
-        }
-        .link-style {
-            @apply text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300;
-        }
-        /* Subtle animation for hero text */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
-        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-        .animate-fade-in-up-delay { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity: 0; }
+/* New: Keyframes for the subtle background animation */
+@keyframes backgroundPan {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+.section-heading {
+    /* Updated styling for a more flowing, gradient look */
+    /* Using flexbox for robust centering of the heading content */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment if heading has multiple lines */
+    text-align: center; /* Fallback for older browsers, though flex handles it */
     
+    font-size: 2.25rem; /* text-4xl */
+    line-height: 2.5rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    margin-bottom: 3rem; /* mb-12 (1rem = 16px, so 12*16=192px, 3rem is 48px, let's match tailwind's default for mb-12 which is 3rem or 48px) */
+    letter-spacing: -0.025em; /* tracking-tight */
+
+    background-image: linear-gradient(to right, #63b3ed, #81e6d9); /* Blue to Teal gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for non-webkit browsers */
+
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Responsive adjustments for section-heading */
+@media (min-width: 768px) { /* md breakpoint */
+    .section-heading {
+        font-size: 3rem; /* md:text-5xl */
+        line-height: 1; /* md:text-5xl usually has a tighter line height */
+    }
+}
+
+/* Common style for elements that will animate on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below its final position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State when element is visible (triggered by JS) */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay for cards in a grid to appear sequentially */
+.grid .card:nth-child(1).is-visible { transition-delay: 0s; }
+.grid .card:nth-child(2).is-visible { transition-delay: 0.1s; }
+.grid .card:nth-child(3).is-visible { transition-delay: 0.2s; }
+.grid .card:nth-child(4).is-visible { transition-delay: 0.3s; }
+.grid .card:nth-child(5).is-visible { transition-delay: 0.4s; }
+.grid .card:nth-child(6).is-visible { transition-delay: 0.5s; }
+.grid .card:nth-child(7).is-visible { transition-delay: 0.6s; }
+.grid .card:nth-child(8).is-visible { transition-delay: 0.7s; }
+.grid .card:nth-child(9).is-visible { transition-delay: 0.8s; }
+
+
+.card {
+    background-color: #2d3748; /* bg-gray-800 */
+    padding: 2rem; /* p-8 */
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    border: 1px solid #4a5568; /* border border-gray-700 */
+    transition: all 0.3s ease-in-out; /* transition-all duration-300 ease-in-out */
+}
+.card:hover {
+    border-color: #38b2ac; /* hover:border-teal-500 */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow on hover */
+    transform: translateY(-5px); /* New: Lift card on hover */
+}
+
+.btn-primary {
+    background-color: #38b2ac; /* bg-teal-500 */
+    color: #1a202c; /* text-gray-900 */
+    padding: 1rem 2rem; /* px-8 py-4 */
+    border-radius: 0.75rem; /* rounded-xl */
+    font-weight: 700; /* font-bold */
+    font-size: 1.125rem; /* text-lg */
+    transition: background-color 0.3s ease-in-out; /* transition-colors duration-300 */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+}
+.btn-primary:hover {
+    background-color: #4fd1c5; /* hover:bg-teal-400 */
+    transform: translateY(-2px); /* New: Subtle lift on button hover */
+}
+
+.link-style {
+    color: #63b3ed; /* text-blue-400 */
+    font-weight: 500; /* font-medium */
+    transition: color 0.3s ease-in-out; /* transition-colors duration-300 */
+}
+.link-style:hover {
+    color: #90cdf4; /* hover:text-blue-300 */
+}
+
+/* custom text styling for #skills block */
+#skills > div > div.card.md\:col-span-2.animate-on-scroll.is-visible > ul {
+    text-align: center;
+}
+
+#skills > div > div.card.md\:col-span-2.animate-on-scroll.is-visible > h3 {
+    text-align: center;
+}
+
+/* Specific style for Strava link */
+.strava-link {
+    color: #fb923c; /* A nice orange color (Tailwind orange-400) */
+}
+
+.strava-link:hover {
+    color: #f97316; /* A slightly darker orange for hover (Tailwind orange-500) */
+}
+
+/* Subtle animation for hero text */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-fade-in-up-delay { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity: 0; }
+
+/* Additional styles to match the overall theme */
+h3 {
+    color: #38b2ac; /* text-teal-400 for card titles */
+}
+ul.list-disc li {
+    color: #cbd5e0; /* text-gray-300 for list items */
+}
+p {
+    color: #cbd5e0; /* text-gray-300 for general paragraphs */
+}
+.text-gray-400 {
+    color: #a0aec0; /* Specific gray for dates/subtext */
+}
+.font-semibold.text-teal-400 {
+    color: #38b2ac; /* Specific teal for bold labels in contact */
+}
+
+/* Background image for My Adventures section */
+#passions {
+    position: relative; /* Needed for pseudo-element overlay */
+    background-image: url('https://i.postimg.cc/s2S26PC7/IMG-1887.jpg'); /* REPLACE WITH YOUR IMAGE URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a parallax effect */
+    z-index: 0; /* Ensure content is above overlay */
+}
+
+/* Overlay for readability */
+#passions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    z-index: -1; /* Place behind content */
+    border-radius: inherit; /* Inherit border-radius from parent if any */
+}
+
+/* Background image for Hero Section */
+#hero-section {
+    position: relative; /* Needed for pseudo-element overlay */
+    background-image: url('https://i.postimg.cc/k4ph2SDY/vimal-s-c-PGMrf-Au-USg-unsplash.jpg'); /* REPLACE WITH YOUR HERO IMAGE URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a parallax effect */
+    z-index: 0; /* Ensure content is above overlay */
+}
+
+/* Overlay for readability in Hero Section */
+#hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    z-index: -1; /* Place behind content */
+    border-radius: inherit; /* Inherit border-radius from parent if any */
+}
