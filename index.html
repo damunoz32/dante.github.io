@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dante Munoz - E-commerce & Adventure Pro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Deep charcoal/dark blue for background */
+            color: #e2e8f0; /* Light gray for main text */
+            line-height: 1.6;
+        }
+        .section-heading {
+            @apply text-4xl md:text-5xl font-extrabold text-center mb-12 text-teal-400 tracking-tight; /* Vibrant teal for headings */
+        }
+        .card {
+            @apply bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300 ease-in-out; /* Dark card, subtle border, hover effect */
+        }
+        .btn-primary {
+            @apply inline-block bg-teal-500 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-teal-400 transition-colors duration-300 shadow-lg; /* Vibrant button */
+        }
+        .link-style {
+            @apply text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300;
+        }
+        /* Subtle animation for hero text */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-fade-in-up-delay { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity: 0; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 shadow-lg py-4">
+        <nav class="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-teal-400 mb-2 sm:mb-0">Dante Munoz</h1>
+            <div class="space-x-4 text-lg">
+                <a href="#about" class="link-style">About</a>
+                <a href="#journey" class="link-style">My Journey</a>
+                <a href="#skills" class="link-style">My Toolkit</a>
+                <a href="#passions" class="link-style">My Adventures</a>
+                <a href="#contact" class="link-style">Connect</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-24 md:py-40 text-center rounded-b-3xl shadow-2xl overflow-hidden">
+        <div class="max-w-screen-md mx-auto px-6 z-10 relative">
+            <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-down text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                Hey there! I'm Dante Munoz.
+            </h2>
+            <p class="text-xl md:text-2xl font-light mb-10 animate-fade-in-up text-gray-300">
+                Fresh off a decade-long adventure at BigCommerce, I'm now looking for my next big ride in the world of tech and beyond. Welcome to my corner of the internet!
+            </p>
+            <a href="#about" class="btn-primary text-xl animate-fade-in-up-delay">Learn More About My Ride!</a>
+        </div>
+        <!-- Subtle background pattern/gradient for visual interest -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at center, rgba(74, 85, 104, 0.2) 1px, transparent 1px);"></div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 md:py-32 max-w-screen-xl mx-auto px-6">
+        <h2 class="section-heading">About My Ride</h2>
+        <div class="card max-w-3xl mx-auto text-lg leading-relaxed text-gray-300">
+            <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-6">
+                <!-- Placeholder for profile picture -->
+                <img src="https://placehold.co/150x150/2d3748/a0aec0?text=Dante" alt="Dante Munoz Profile" class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-teal-500 shadow-lg mb-6 md:mb-0">
+                <p>So, who am I? I'm a seasoned e-commerce pro, having spent almost 10 years growing from customer support to a Senior Marketplace Operations Manager. I absolutely love diving deep into how online platforms work, making sure apps and themes play nice, and basically ensuring everything runs smoothly for merchants and partners. It's all about making digital experiences awesome!</p>
+            </div>
+            <p>Outside of work, you'll definitely find me hitting the trails on my bike (or in my 4Runner!), drumming away, or just enjoying the great outdoors. I'm all about building cool stuff, solving tricky puzzles, and always learning something new. I believe in bringing that same passion and problem-solving spirit to every challenge, professional or personal!</p>
+        </div>
+    </section>
+
+    <!-- My Journey (Work Experience) Section -->
+    <section id="journey" class="py-20 md:py-32 bg-gray-900">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="section-heading">My Professional Journey</h2>
+            <div class="grid lg:grid-cols-2 gap-10">
+
+                <!-- Senior Marketplace Operations Manager -->
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Senior Marketplace Operations Manager</h3>
+                    <p class="text-gray-400 mb-4">BigCommerce | Remote | June 2020 – July 2025</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>Spearheaded the launch of ~45 apps & 12 themes annually, ensuring full compliance & functionality.</li>
+                        <li>Built out key internal review processes for Accessibility & Catalyst compatibility, boosting marketplace quality.</li>
+                        <li>Led weekly Jira triages for Partner Theme issues, streamlining resolutions with partners.</li>
+                        <li>Managed theme updates via GitHub & Launchbay, ensuring smooth production deployments.</li>
+                        <li>Served as SME for Stencil & Catalyst themes, handling ~70% of team's theme projects.</li>
+                        <li>Conducted granular UAT, proactively identifying & reporting bugs before deployment.</li>
+                        <li>Troubleshot & verified API calls (v2/v3/GraphQL), ensuring robust app/theme performance.</li>
+                    </ul>
+                </div>
+
+                <!-- Product Support Engineer -->
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Product Support Engineer</h3>
+                    <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | January 2018 – June 2020</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>Acted as key liaison between Engineering & Merchants, translating complex tech issues.</li>
+                        <li>Collaborated directly with Product & Engineering to resolve platform bugs using Jira.</li>
+                        <li>Utilized Kibana 5, Tableau, Contentful, Algolia Search for advanced merchant/partner support.</li>
+                    </ul>
+                </div>
+
+                <!-- Tier 2 Support Representative -->
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Tier 2 Support Representative</h3>
+                    <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | May 2016 – January 2018</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>Resolved 30-50 escalated tickets weekly & handled priority calls for Enterprise Merchants.</li>
+                        <li>Provided expert technical support to Technical Partners (app developers) on v2/v3 APIs.</li>
+                    </ul>
+                </div>
+
+                <!-- Tier 1 Support Representative -->
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-2">Tier 1 Support Representative</h3>
+                    <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | March 2015 – May 2016</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>Managed 80-90 inbound support calls/day for diverse BigCommerce merchants.</li>
+                        <li>Maintained 97%+ NPS for issue resolution, showcasing excellent customer service.</li>
+                        <li>Reported platform bugs via Jira & utilized Salesforce for ticket management.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Toolkit (Skills) Section -->
+    <section id="skills" class="py-20 md:py-32 max-w-screen-xl mx-auto px-6">
+        <h2 class="section-heading">My Toolkit</h2>
+        <div class="grid md:grid-cols-2 gap-10 text-lg">
+            <div class="card">
+                <h3 class="text-2xl font-bold text-teal-400 mb-4">E-commerce & Platform Wizardry</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <li>BigCommerce (SME: Stencil, Catalyst)</li>
+                    <li>Shopify (familiarity with platform functionality)</li>
+                    <li>Marketplace Management</li>
+                    <li>App & Theme Lifecycle Management (Review, Launch, Updates)</li>
+                    <li>User Acceptance Testing (UAT)</li>
+                    <li>Accessibility Compliance Auditing</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 class="text-2xl font-bold text-teal-400 mb-4">Tech & Troubleshooting Superpowers</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <li>APIs (BigCommerce v2/v3, GraphQL, RESTful)</li>
+                    <li>API Traffic Verification & Troubleshooting</li>
+                    <li>Jira (Advanced Proficiency)</li>
+                    <li>Salesforce (Sales & Service Cloud, Lightning)</li>
+                    <li>GitHub</li>
+                    <li>Kibana 5, Tableau, Internal Reporting Tools</li>
+                    <li>Contentful, Algolia Search</li>
+                    <li>Launchbay</li>
+                    <li>HTML, CSS, JavaScript (understanding for troubleshooting/UAT)</li>
+                </ul>
+            </div>
+            <div class="card md:col-span-2">
+                <h3 class="text-2xl font-bold text-teal-400 mb-4">People & Process Power-Ups</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <li>Complex Troubleshooting & Strategic Thinking</li>
+                    <li>Technical Liaison & Communication</li>
+                    <li>Cross-functional Collaboration</li>
+                    <li>Stakeholder & Partner Relationship Management</li>
+                    <li>Customer Service Excellence</li>
+                    <li>Process Development & Optimization</li>
+                    <li>Detail-Oriented Analysis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Adventures (Passions) Section -->
+    <section id="passions" class="py-20 md:py-32 bg-gray-900">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="section-heading">My Adventures Beyond Work</h2>
+            <div class="grid md:grid-cols-3 gap-10 text-lg">
+                <div class="card text-center">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">Cycling Obsession 🚴‍♂️</h3>
+                    <p class="mb-4 text-gray-300">
+                        Whether it's hitting the gravel on my amazing **Hunt Carbon Aerodynamicist wheels** (on my **Rodeo Traildonkey 3.1** – my absolute favorite!), shredding trails on my **Yeti SB130**, or cruising fixed-gear style on my **State Undefeated Track frame**, I live for two wheels. It's where I find my flow and push my limits!
+                    </p>
+                    <a href="https://www.strava.com/athletes/6709492" target="_blank" class="link-style">See my rides on Strava!</a>
+                </div>
+                <div class="card text-center">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">Overlanding & Outdoors ⛰️</h3>
+                    <p class="mb-4 text-gray-300">
+                        When I'm not on the bike, you'll often find me exploring off-grid. My 5th Gen 4Runner, outfitted with a sweet **Backwoods Adventure Mods front bumper**, is my trusty companion for getting out there. There's nothing quite like fresh air and wide-open spaces!
+                    </p>
+                </div>
+                <div class="card text-center">
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">Drumming Since '03 🥁</h3>
+                    <p class="mb-4 text-gray-300">
+                        I've been a drummer since I was 13, and it's a huge part of who I am. You'll usually find me laying down a beat with my trusty **Pro-Mark drumsticks** and **Evans drumheads**. It's my creative outlet and a great way to unwind!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 max-w-screen-xl mx-auto px-6 text-center">
+        <h2 class="section-heading">Let's Connect!</h2>
+        <div class="card max-w-2xl mx-auto text-lg leading-relaxed text-gray-300">
+            <p class="mb-4">
+                Ready to chat about e-commerce, tech, or maybe even bikes and drumming? I'm always open to new connections and opportunities.
+            </p>
+            <p class="mb-2">
+                <span class="font-semibold text-teal-400">Email:</span> <a href="mailto:Damunoz32@gmail.com" class="link-style">Damunoz32@gmail.com</a>
+            </p>
+            <p class="mb-4">
+                <span class="font-semibold text-teal-400">LinkedIn:</span> <a href="www.linkedin.com/in/dante-munoz-86433190" target="_blank" class="link-style">My LinkedIn Profile</a>
+            </p>
+            <p class="text-sm text-gray-500 mt-8">
+                &copy; 2025 Dante Munoz. All rights reserved.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
