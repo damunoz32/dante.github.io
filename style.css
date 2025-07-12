@@ -208,28 +208,28 @@ section::before {
 
 /* Background images for individual sections (re-added) */
 #hero-section {
-    background-image: url('https://i.postimg.cc/0QsyL693/DSC09968.jpg');
+    background-image: url('assets/hero_background.JPEG'); /* Updated path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Re-added for parallax effect on desktop */
 }
 
 #about {
-    background-image: url('https://i.postimg.cc/MHBfykK2/1.jpg');
+    background-image: url('assets/about_background.jpg'); /* Updated path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
 #journey {
-    background-image: url('https://i.postimg.cc/fTBRvJsK/grinding-tuesdays-edited.png');
+    background-image: url('assets/journey_2_background.png'); /* Updated path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
 #skills {
-    background-image: url('https://i.postimg.cc/nLwcBLyW/chanhee-lee-MADezathl-Zo-unsplash.jpg');
+    background-image: url('assets/skills_background.jpg'); /* Updated path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -240,14 +240,14 @@ section::before {
 } 
 
 #passions {
-    background-image: url('https://i.postimg.cc/s2S26PC7/IMG-1887.jpg');
+    background-image: url('assets/passions_background.JPEG'); /* Updated path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
 #contact {
-    background-image: url('https://i.postimg.cc/wBx4xz9B/DSC00061.jpg');
+    background-image: url('assets/connect_background.jpg'); /* Updated path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
