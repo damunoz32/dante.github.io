@@ -257,7 +257,6 @@ section::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 500px; /* Adjust as needed for card height */
     position: relative;
     padding-top: 2rem; /* Space for stacked cards */
     padding-bottom: 2rem;
@@ -268,12 +267,25 @@ section::before {
     position: relative;
     width: 90%; /* Take most of the width */
     max-width: 700px; /* Max width for desktop cards */
-    min-height: 550px; /* Increased height to prevent overlap with header/button */
+    min-height: 550px; /* Re-introducing fixed height for desktop */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    /* Removed transition for height as it's now static */
 }
+
+/* Mobile adjustments for carousel-stack-journey */
+@media (max-width: 767px) { /* For screens smaller than 768px (mobile) */
+    .carousel-stack-journey {
+        min-height: 750px; /* Re-introducing fixed height for mobile */
+        width: 95%; /* Slightly wider on mobile */
+    }
+    .journey-card {
+        padding: 1.5rem; /* Slightly less padding on mobile cards */
+    }
+}
+
 
 .journey-card {
     position: absolute;

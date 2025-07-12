@@ -302,20 +302,17 @@
 
         // Main Journey Carousel Component
         function JourneyCarousel() {
-            // State to manage the order of journey entries in the stack
             const [currentJourneyCards, setCurrentJourneyCards] = React.useState(journeyData);
 
             // Function to move the top card to the back of the stack
             const cycleCard = () => {
-                // Add a class to trigger the animation
                 const topCardElement = document.querySelector('.journey-card.is-top');
                 if (topCardElement) {
                     topCardElement.classList.add('is-moving-to-back');
-                    // Remove the card from the DOM after the animation completes
                     setTimeout(() => {
                         const [firstCard, ...restOfCards] = currentJourneyCards;
                         setCurrentJourneyCards([...restOfCards, firstCard]);
-                        topCardElement.classList.remove('is-moving-to-back'); // Clean up the class
+                        topCardElement.classList.remove('is-moving-to-back'); 
                     }, 500); // Match animation duration
                 }
             };
@@ -325,7 +322,6 @@
                 <div className="journey-carousel-container">
                     <div className="carousel-stack-journey">
                         {currentJourneyCards.map((journey, index) => (
-                            // Only render a few cards for visual stacking effect
                             index < 3 && (
                                 <JourneyCard 
                                     key={journey.id} 
