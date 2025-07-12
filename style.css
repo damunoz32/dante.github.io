@@ -1,3 +1,442 @@
+<<<<<<< HEAD
+html {
+    overflow-y: auto; /* Allow regular vertical scrolling */
+    scroll-behavior: smooth; /* Keep smooth scroll for anchor links */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #748873; /* Dark muted green from palette */
+    color: #F8F8F8; /* Almost white for main text from palette */
+    line-height: 1.6;
+    /* Subtle animated background for the entire body */
+    background-image: radial-gradient(circle at center, rgba(248, 248, 248, 0.05) 1px, transparent 1px); /* Using almost white for dots */
+    background-size: 20px 20px; /* Size of the dots/pattern */
+    animation: backgroundPan 60s linear infinite; /* Slow, continuous movement */
+    overflow-x: hidden; /* Prevent horizontal scrollbar from animation */
+}
+
+/* Keyframes for the subtle background animation */
+@keyframes backgroundPan {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+.section-heading {
+    /* Updated styling for a more flowing, gradient look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    font-size: 2.25rem; /* text-4xl */
+    line-height: 2.5rem; /* text-4xl */
+    font-weight: 700; /* Changed from 800 to 700 for a more streamlined feel */
+    margin-bottom: 3rem; /* mb-12 */
+    letter-spacing: -0.025em; /* tracking-tight */
+
+    background-image: linear-gradient(to right, #D1A980, #E5E0D8); /* Muted light brown to very light beige gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for non-webkit browsers */
+
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Responsive adjustments for section-heading */
+@media (min-width: 768px) { /* md breakpoint */
+    .section-heading {
+        font-size: 3rem; /* md:text-5xl */
+        line-height: 1;
+    }
+}
+
+/*Simple padding to cleanup layout for nav links*/
+a.link-style.py-2.sm\:py-0.nav-link-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Common style for elements that will animate on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below its final position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State when element is visible (triggered by JS) */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay for cards in a grid to appear sequentially */
+.grid .card:nth-child(1).is-visible { transition-delay: 0s; }
+.grid .card:nth-child(2).is-visible { transition-delay: 0.1s; }
+.grid .card:nth-child(3).is-visible { transition-delay: 0.2s; }
+.grid .card:nth-child(4).is-visible { transition-delay: 0.3s; }
+.grid .card:nth-child(5).is-visible { transition-delay: 0.4s; }
+.grid .card:nth-child(6).is-visible { transition-delay: 0.5s; }
+.grid .card:nth-child(7).is-visible { transition-delay: 0.6s; }
+.grid .card:nth-child(8).is-visible { transition-delay: 0.7s; }
+.grid .card:nth-child(9).is-visible { transition-delay: 0.8s; }
+
+
+.card {
+    background-color: #5A6B59; /* Slightly lighter green for card background */
+    padding: 2rem; /* p-8 */
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    border: 1px solid #90A08F; /* Lighter green border */
+    transition: all 0.3s ease-in-out;
+    position: relative; /* Ensure z-index works correctly */
+}
+.card:hover {
+    border-color: #D1A980; /* Muted light brown/tan for hover border */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow on hover */
+    transform: translateY(-5px);
+    z-index: 10; /* Bring hovered card to the front */
+}
+
+.btn-primary {
+    background-color: #D1A980; /* Muted light brown/tan for primary button */
+    color: #748873; /* Dark muted green for button text */
+    padding: 1rem 2rem; /* px-8 py-4 */
+    border-radius: 0.75rem; /* rounded-xl */
+    font-weight: 700; /* font-bold */
+    font-size: 1.125rem; /* text-lg */
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+}
+.btn-primary:hover {
+    background-color: #E5E0D8; /* Very light beige/off-white for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.15), 0 3px 6px -1px rgba(0, 0, 0, 0.08); /* More subtle shadow on hover */
+}
+
+.link-style {
+    color: #D1A980; /* Muted light brown/tan for links */
+    font-weight: 500; /* font-medium */
+    transition: color 0.3s ease-in-out;
+}
+.link-style:hover {
+    color: #E5E0D8; /* Very light beige/off-white for hover */
+}
+
+/* Specific style for Strava link */
+.strava-link {
+    color: #fb923c; /* Existing orange, fits well */
+}
+
+.strava-link:hover {
+    color: #f97316; /* Existing darker orange, fits well */
+}
+
+/* Subtle animation for hero text */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-fade-in-up-delay { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity: 0; }
+
+/* Additional styles to match the overall theme */
+h3 {
+    color: #D1A980; /* Muted light brown/tan for card titles */
+}
+ul.list-disc li {
+    color: #F8F8F8; /* Almost white for list items */
+    line-height: 1.5; /* Slightly tighter line height for lists */
+}
+p {
+    color: #F8F8F8; /* Almost white for general paragraphs */
+}
+.text-gray-400 {
+    color: #A3B4A2; /* Muted warm gray/green for dates/subtext */
+}
+.font-semibold { /* Targeted directly as text-teal-400 was removed from HTML */
+    color: #D1A980; /* Muted light brown/tan for bold labels in contact */
+}
+
+/* All sections */
+section {
+    position: relative; /* Needed for pseudo-element overlay and z-index */
+    z-index: 0; /* Ensure content is above overlay */
+    border-radius: 1rem; /* Added for smoother transition */
+    overflow-y: hidden; /* Changed to hidden to remove internal section scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling within section */
+    min-height: 100vh; /* Re-added to make sections at least viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically within the section */
+    padding-left: 1.5rem; /* Consistent horizontal padding for sections */
+    padding-right: 1.5rem; /* Consistent horizontal padding for sections */
+}
+
+/* Add some padding to the grid container within sections to prevent clipping on hover */
+section .grid {
+    padding-top: 10px; /* Add space at the top for the translateY effect */
+    padding-bottom: 5px; /* Add a little at the bottom too for consistency */
+}
+
+/* Overlay for readability - apply to all sections with background images */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay (kept for contrast) */
+    z-index: -1; /* Place behind content */
+    border-radius: inherit; /* Inherit border-radius from parent if any */
+    transition: background-color 0.5s ease; /* Added for smoother overlay transition */
+}
+
+/* Background images for individual sections */
+#hero-section {
+    background-image: url('assets/hero_background.JPEG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Added */
+    background-attachment: fixed; /* Re-added for parallax effect on desktop */
+}
+
+#about {
+    background-image: url('assets/about_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Added */
+    background-attachment: fixed;
+}
+
+#journey {
+    background-image: url('assets/journey_2_background.png'); /* Confirmed .png */
+    background-size: cover; /* Default for desktop */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#skills {
+    background-image: url('assets/skills_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Added */
+    background-attachment: fixed;
+}
+
+/* Specific styling for the third card in the skills section on medium screens and up */
+@media (min-width: 768px) { /* md breakpoint and up */
+    #skills .grid .card:nth-child(3) {
+        grid-column: span 2 / span 2; /* Make it span two columns */
+        margin: auto; /* Center it horizontally within the two-column span */
+        max-width: 700px; /* Set a max-width to prevent it from becoming too wide */
+    }
+}
+
+/* Removed specific text-align: left rules for ul and h3 within the md:col-span-2 card */
+/* These specific rules are no longer needed as the card itself will be centered */
+#skills > div > div > div > ul {
+    text-align: left; /* Default alignment */
+}
+#skills > div > div > div > h3 {
+    text-align: left; /* Default alignment */
+}
+
+/* Removed styles for the React Skills Widget */
+/* .filter-btn, .filter-btn:hover, .filter-btn-active, .filter-btn-active:hover, .skill-item-card, .skill-item-card:hover are removed */
+
+/* Styles for the React Journey Carousel */
+.journey-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 2rem; /* Space for stacked cards */
+    padding-bottom: 2rem;
+    margin-top: 3rem; /* Added margin-top to push it down from the section heading */
+}
+
+.carousel-stack-journey {
+    position: relative;
+    width: 90%; /* Take most of the width */
+    max-width: 700px; /* Max width for desktop cards */
+    min-height: 550px; /* Re-introducing fixed height for desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    /* Removed transition for height as it's now static */
+}
+
+/* Mobile adjustments for carousel-stack-journey and background image */
+@media (max-width: 767px) { /* For screens smaller than 768px (mobile) */
+    .carousel-stack-journey {
+        min-height: 900px; /* Increased minimum height for mobile to prevent overlap with longest card */
+        width: 95%; /* Slightly wider on mobile */
+    }
+    .journey-card {
+        padding: 1.5rem; /* Slightly less padding on mobile cards */
+    }
+
+    /* Specific background adjustments for #journey on mobile */
+    #journey {
+        background-size: cover !important; /* Reverted to cover */
+        background-repeat: no-repeat !important; /* Prevent repeating if space remains */
+        background-position: center !important; /* Center the contained image */
+        /* Removed background-color here */
+        background-attachment: scroll !important; /* Ensure it scrolls on mobile */
+    }
+}
+
+
+.journey-card {
+    position: absolute;
+    width: 100%; /* Full width within its container */
+    background-color: #5A6B59; /* Card background color */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #90A08F;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s; /* Add z-index transition to make it immediate */
+    display: flex;
+    flex-direction: column; /* Stack title, date, responsibilities vertically */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left;
+    color: #F8F8F8; /* Text color */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Styles for cards in the stack (behind the top card) */
+.journey-card:nth-child(1) { /* This will be the top card */
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+.journey-card:nth-child(2) { /* Card directly behind the top */
+    transform: translateY(15px) scale(0.98); /* Slightly more offset and smaller */
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.journey-card:nth-child(3) { /* Card further behind */
+    transform: translateY(30px) scale(0.96); /* Even more offset and smaller */
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* Animation for cycling a card to the back */
+.journey-card.is-moving-to-back {
+    animation: cycleJourneyCard 0.5s forwards;
+}
+
+@keyframes cycleJourneyCard {
+    0% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+        z-index: 10; /* Keep on top during animation */
+    }
+    50% {
+        transform: translateY(-80px) scale(0.9) translateX(100%); /* Move up and off to the right */
+        opacity: 0;
+        z-index: 10;
+    }
+    51% {
+        z-index: 0; /* Send to back instantly after moving off screen */
+        transform: translateY(30px) scale(0.96); /* Reset to back-of-stack position */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(30px) scale(0.96); /* Final position for the back card */
+        opacity: 0.6;
+        z-index: 1;
+    }
+}
+
+.cycle-button-journey {
+    /* Uses existing btn-primary styles */
+    /* Additional styling specific to this button if needed */
+    margin-top: 2rem; /* Space between carousel and button */
+}
+
+#passions {
+    background-image: url('assets/passions_background.JPEG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Added */
+    background-attachment: fixed;
+}
+
+#contact {
+    background-image: url('assets/connect_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Added */
+    background-attachment: fixed;
+}
+
+/* Media query to disable background-attachment: fixed on smaller screens */
+@media (max-width: 767px) { /* Applies to screens smaller than 768px (Tailwind's sm breakpoint) */
+    #hero-section, #about, #skills, #passions, #contact { /* Removed #journey from here as it has its own rule */
+        background-attachment: scroll !important; /* Override fixed to scroll on mobile */
+    }
+}
+
+/* Header Background Color */
+header {
+    background-color: #5A6B59; /* Using a darker green from the palette for the header */
+}
+
+/* Navigation Links Spacing */
+@media (min-width: 640px) { /* sm breakpoint and up */
+    .nav-links .nav-link-item {
+        margin: 0 1.5rem; /* Increased horizontal spacing between links */
+    }
+    .nav-links .nav-link-item:first-child {
+        margin-left: 0; /* No left margin for the first link */
+    }
+    .nav-links .nav-link-item:last-child {
+        margin-right: 0; /* No right margin for the last link */
+    }
+}
+
+.nav-separator {
+    display: none; /* Hidden by default for mobile */
+    vertical-align: middle; /* Align with text vertically */
+}
+
+@media (min-width: 640px) { /* sm breakpoint and up */
+    .nav-separator {
+        display: inline-block;
+        width: 2px; /* The actual bar width */
+        height: 1.25rem; /* Roughly text-lg height, adjust if needed */
+        
+        /* 3D/Embossed effect - updated to match new palette */
+        background-image: linear-gradient(to bottom, 
+            rgba(248, 248, 248, 0.2), /* Top highlight (using new main text color) */
+            rgba(248, 248, 248, 0.05), /* Middle fade (using new main text color) */
+            rgba(116, 136, 115, 0.25) /* Bottom shadow (using new body background color) */
+        );
+        box-shadow: 
+            0 0.5px 0 rgba(248, 248, 248, 0.1) inset, /* Top inner highlight */
+            0 -0.5px 0 rgba(116, 136, 115, 0.1) inset; /* Bottom inner shadow */
+        border-radius: 0.5px; /* Slightly rounded edges for the bar */
+    }
+}
+=======
 html {
     overflow-y: auto; /* Allow regular vertical scrolling */
     scroll-behavior: smooth; /* Keep smooth scroll for anchor links */
@@ -426,3 +865,4 @@ header {
         border-radius: 0.5px; /* Slightly rounded edges for the bar */
     }
 }
+>>>>>>> 769291ef079c96536ec50c9a08c2122b2175d95e
