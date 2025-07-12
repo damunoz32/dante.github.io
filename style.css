@@ -295,11 +295,13 @@ section::before {
 }
 
 .bike-emoji.float-left {
-    transform: translateX(calc(-50% - 40px)) translateY(-50%); /* Shift left from center */
+    /* When floating left (card is on the right), emoji faces left (flipped) */
+    transform: translateX(calc(-50% - 40px)) translateY(-50%) scaleX(-1); 
 }
 
 .bike-emoji.float-right {
-    transform: translateX(calc(-50% + 40px)) translateY(-50%); /* Shift right from center */
+    /* When floating right (card is on the left), emoji faces right (default) */
+    transform: translateX(calc(-50% + 40px)) translateY(-50%) scaleX(1); 
 }
 
 
