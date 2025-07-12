@@ -5,8 +5,8 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #748873; /* Dark muted green */
-    color: #F8F8F8; /* Almost white for main text */
+    background-color: #748873; /* Dark muted green from palette */
+    color: #F8F8F8; /* Almost white for main text from palette */
     line-height: 1.6;
     /* Subtle animated background for the entire body */
     background-image: radial-gradient(circle at center, rgba(248, 248, 248, 0.05) 1px, transparent 1px); /* Using almost white for dots */
@@ -30,7 +30,7 @@ body {
     
     font-size: 2.25rem; /* text-4xl */
     line-height: 2.5rem; /* text-4xl */
-    font-weight: 800; /* font-extrabold */
+    font-weight: 700; /* Changed from 800 to 700 for a more streamlined feel */
     margin-bottom: 3rem; /* mb-12 */
     letter-spacing: -0.025em; /* tracking-tight */
 
@@ -114,6 +114,7 @@ a.link-style.py-2.sm\:py-0.nav-link-item {
 .btn-primary:hover {
     background-color: #E5E0D8; /* Very light beige/off-white for hover */
     transform: translateY(-2px);
+    box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.15), 0 3px 6px -1px rgba(0, 0, 0, 0.08); /* More subtle shadow on hover */
 }
 
 .link-style {
@@ -153,6 +154,7 @@ h3 {
 }
 ul.list-disc li {
     color: #F8F8F8; /* Almost white for list items */
+    line-height: 1.5; /* Slightly tighter line height for lists */
 }
 p {
     color: #F8F8F8; /* Almost white for general paragraphs */
@@ -160,7 +162,7 @@ p {
 .text-gray-400 {
     color: #A3B4A2; /* Muted warm gray/green for dates/subtext */
 }
-.font-semibold.text-teal-400 { /* This class name is a bit of a misnomer now, but targeting it directly */
+.font-semibold { /* Targeted directly as text-teal-400 was removed from HTML */
     color: #D1A980; /* Muted light brown/tan for bold labels in contact */
 }
 
@@ -175,6 +177,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically within the section */
+    padding-left: 1.5rem; /* Consistent horizontal padding for sections */
+    padding-right: 1.5rem; /* Consistent horizontal padding for sections */
 }
 
 /* Add some padding to the grid container within sections to prevent clipping on hover */
@@ -265,9 +269,9 @@ section::before {
     }
 }
 
-/* Removed fixed header padding from hero-section as header is no longer fixed */
-#hero-section {
-    padding-top: 0; 
+/* Header Background Color */
+header {
+    background-color: #5A6B59; /* Using a darker green from the palette for the header */
 }
 
 /* Navigation Links Spacing */
@@ -294,7 +298,7 @@ section::before {
         width: 2px; /* The actual bar width */
         height: 1.25rem; /* Roughly text-lg height, adjust if needed */
         
-        /* 3D/Embossed effect */
+        /* 3D/Embossed effect - updated to match new palette */
         background-image: linear-gradient(to bottom, 
             rgba(248, 248, 248, 0.2), /* Top highlight (using new main text color) */
             rgba(248, 248, 248, 0.05), /* Middle fade (using new main text color) */
