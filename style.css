@@ -125,15 +125,6 @@ a.link-style.py-2.sm\:py-0.nav-link-item {
     color: #E5E0D8; /* Very light beige/off-white for hover */
 }
 
-/* custom text styling for #skills block */
-/* Removed specific text-align: center rules for ul and h3 within the md:col-span-2 card */
-/* #skills > div > div.card.md\:col-span-2.animate-on-scroll.is-visible > ul {
-    text-align: center;
-}
-#skills > div > div.card.md\:col-span-2.animate-on-scroll.is-visible > h3 {
-    text-align: center;
-} */
-
 /* Specific style for Strava link */
 .strava-link {
     color: #fb923c; /* Existing orange, fits well */
@@ -235,9 +226,23 @@ section::before {
     background-attachment: fixed;
 }
 
-#skills > div > div > div{
-    text-align: center;
-} 
+/* Specific styling for the third card in the skills section on medium screens and up */
+@media (min-width: 768px) { /* md breakpoint and up */
+    #skills .grid .card:nth-child(3) {
+        grid-column: span 2 / span 2; /* Make it span two columns */
+        margin: auto; /* Center it horizontally within the two-column span */
+        max-width: 700px; /* Set a max-width to prevent it from becoming too wide */
+    }
+}
+
+/* Removed specific text-align: center rules for ul and h3 within the md:col-span-2 card */
+/* These specific rules are no longer needed as the card itself will be centered */
+#skills > div > div > div > ul {
+    text-align: left; /* Default alignment */
+}
+#skills > div > div > div > h3 {
+    text-align: left; /* Default alignment */
+}
 
 #passions {
     background-image: url('assets/passions_background.JPEG'); /* Updated path */
