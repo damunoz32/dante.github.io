@@ -278,7 +278,7 @@ section::before {
 /* Mobile adjustments for carousel-stack-journey */
 @media (max-width: 767px) { /* For screens smaller than 768px (mobile) */
     .carousel-stack-journey {
-        min-height: 750px; /* Re-introducing fixed height for mobile */
+        min-height: 900px; /* Increased minimum height for mobile to prevent overlap with longest card */
         width: 95%; /* Slightly wider on mobile */
     }
     .journey-card {
