@@ -239,13 +239,111 @@ section::before {
     }
 }
 
-/* Removed specific text-align: center rules for ul and h3 within the md:col-span-2 card */
+/* Removed specific text-align: left rules for ul and h3 within the md:col-span-2 card */
 /* These specific rules are no longer needed as the card itself will be centered */
 #skills > div > div > div > ul {
     text-align: left; /* Default alignment */
 }
 #skills > div > div > div > h3 {
     text-align: left; /* Default alignment */
+}
+
+/* Removed styles for the React Skills Widget */
+/* .filter-btn, .filter-btn:hover, .filter-btn-active, .filter-btn-active:hover, .skill-item-card, .skill-item-card:hover are removed */
+
+/* Styles for the React Journey Carousel */
+.journey-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px; /* Adjust as needed for card height */
+    position: relative;
+    padding-top: 2rem; /* Space for stacked cards */
+    padding-bottom: 2rem;
+    margin-top: 3rem; /* Added margin-top to push it down from the section heading */
+}
+
+.carousel-stack-journey {
+    position: relative;
+    width: 90%; /* Take most of the width */
+    max-width: 700px; /* Max width for desktop cards */
+    min-height: 550px; /* Increased height to prevent overlap with header/button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.journey-card {
+    position: absolute;
+    width: 100%; /* Full width within its container */
+    background-color: #5A6B59; /* Card background color */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #90A08F;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s; /* Add z-index transition to make it immediate */
+    display: flex;
+    flex-direction: column; /* Stack title, date, responsibilities vertically */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left;
+    color: #F8F8F8; /* Text color */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Styles for cards in the stack (behind the top card) */
+.journey-card:nth-child(1) { /* This will be the top card */
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+.journey-card:nth-child(2) { /* Card directly behind the top */
+    transform: translateY(15px) scale(0.98); /* Slightly more offset and smaller */
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.journey-card:nth-child(3) { /* Card further behind */
+    transform: translateY(30px) scale(0.96); /* Even more offset and smaller */
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* Animation for cycling a card to the back */
+.journey-card.is-moving-to-back {
+    animation: cycleJourneyCard 0.5s forwards;
+}
+
+@keyframes cycleJourneyCard {
+    0% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+        z-index: 10; /* Keep on top during animation */
+    }
+    50% {
+        transform: translateY(-80px) scale(0.9) translateX(100%); /* Move up and off to the right */
+        opacity: 0;
+        z-index: 10;
+    }
+    51% {
+        z-index: 0; /* Send to back instantly after moving off screen */
+        transform: translateY(30px) scale(0.96); /* Reset to back-of-stack position */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(30px) scale(0.96); /* Final position for the back card */
+        opacity: 0.6;
+        z-index: 1;
+    }
+}
+
+.cycle-button-journey {
+    /* Uses existing btn-primary styles */
+    /* Additional styling specific to this button if needed */
+    margin-top: 2rem; /* Space between carousel and button */
 }
 
 #passions {

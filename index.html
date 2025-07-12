@@ -14,7 +14,7 @@
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <header class="shadow-md py-4"> <!-- Changed shadow-lg to shadow-md -->
+    <header class="shadow-md py-4">
         <nav class="max-w-screen-xl mx-auto px-6 flex justify-between items-center">
             <!-- Container for hamburger and title on small screens -->
             <div class="flex items-center">
@@ -52,7 +52,7 @@
             <a href="#about" class="btn-primary text-xl animate-fade-in-up-delay">Learn More About Me!</a>
         </div>
         <!-- Subtle background pattern/gradient for visual interest -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at center, rgba(116, 136, 115, 0.2) 1px, transparent 1px);"></div> <!-- Updated rgba to match body background -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at center, rgba(116, 136, 115, 0.2) 1px, transparent 1px);"></div>
     </section>
 
     <!-- About Me Section -->
@@ -62,7 +62,7 @@
             <div class="card max-w-3xl mx-auto text-lg leading-relaxed text-gray-300 animate-on-scroll">
                 <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-6">
                     <!-- profile picture -->
-                    <img src="assets/155N2YTfAaHGORx-e_hO94JlAbC255kENa_AWII7i1M-1536x2048.jpg" alt="Dante Munoz Profile" class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-[#D1A980] shadow-lg mb-6 md:mb-0 flex-none animate-on-scroll"> <!-- Updated border color -->
+                    <img src="assets/155N2YTfAaHGORx-e_hO94JlAbC255kENa_AWII7i1M-1536x2048.jpg" alt="Dante Munoz Profile" class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-[#D1A980] shadow-lg mb-6 md:mb-0 flex-none animate-on-scroll">
                     <p>So, who am I? I'm a seasoned e-commerce pro, having spent almost 10 years growing from customer support to a Senior Marketplace Operations Manager. I absolutely love diving deep into how online platforms work, making sure apps and themes play nice, and basically ensuring everything runs smoothly for merchants and partners. It's all about making digital experiences awesome!</p>
                 </div>
                 <p>Outside of work, you'll definitely find me hitting the trails on my bike (or in my 4Runner!), drumming away, or just enjoying the great outdoors. I'm all about building cool stuff, solving tricky puzzles, and always learning something new. I believe in bringing that same passion and problem-solving spirit to every challenge, professional or personal!</p>
@@ -70,72 +70,25 @@
         </div>
     </section>
 
-    <!-- My Journey (Work Experience) Section -->
+    <!-- My Journey (Work Experience) Section - Now with React Carousel -->
     <section id="journey" class="py-20 md:py-32">
-        <div class="max-w-screen-xl mx-auto px-6"> <!-- Removed flex-col h-full and flex-grow overflow-y-hidden from parent divs -->
+        <div class="max-w-screen-xl mx-auto px-6">
             <h2 class="section-heading animate-on-scroll flex-shrink-0">My Professional Journey</h2>
-            <div> 
-                <div class="grid lg:grid-cols-2 gap-10">
-
-                    <!-- Senior Marketplace Operations Manager -->
-                    <div class="card animate-on-scroll">
-                        <h3 class="text-2xl font-bold mb-2">Senior Marketplace Operations Manager</h3> <!-- Removed text-teal-400 -->
-                        <p class="text-gray-400 mb-4">BigCommerce | Remote | June 2020 – July 2025</p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Spearheaded the launch of ~45 apps & 12 themes annually, ensuring full compliance & functionality.</li>
-                            <li>Built out key internal review processes for Accessibility & Catalyst compatibility, boosting marketplace quality.</li>
-                            <li>Led weekly Jira triages for Partner Theme issues, streamlining resolutions with partners.</li>
-                            <li>Managed theme updates via GitHub & Launchbay, ensuring smooth production deployments.</li>
-                            <li>Served as SME for Stencil & Catalyst themes, handling ~70% of team's theme projects.</li>
-                            <li>Conducted granular UAT, proactively identifying & reporting bugs before deployment.</li>
-                            <li>Troubleshot & verified API calls (v2/v3/GraphQL), ensuring robust app/theme performance.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Product Support Engineer -->
-                    <div class="card animate-on-scroll">
-                        <h3 class="text-2xl font-bold mb-2">Product Support Engineer</h3> <!-- Removed text-teal-400 -->
-                        <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | January 2018 – June 2020</p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Acted as key liaison between Engineering & Merchants, translating complex tech issues.</li>
-                            <li>Collaborated directly with multiple Product and Engineering teams to report, troubleshoot, and resolve complex platform bugs and technical matters, leveraging extensive Jira experience.</li>
-                            <li>Utilized internal reporting and analytics tools including Kibana 5, Tableau, Contentful, and Algolia Search to investigate and address advanced merchant or partner support issues.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tier 2 Support Representative -->
-                    <div class="card animate-on-scroll">
-                        <h3 class="text-2xl font-bold mb-2">Tier 2 Support Representative</h3> <!-- Removed text-teal-400 -->
-                        <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | May 2016 – January 2018</p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Resolved 30-50 escalated, email-based support tickets weekly and priority phone calls from Enterprise-level Merchants, demonstrating advanced problem-solving and efficiency.</li>
-                            <li>Provided expert technical support to BigCommerce's Technical Partners (app developers), specifically addressing complex questions and issues related to v2/v3 APIs.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tier 1 Support Representative -->
-                    <div class="card animate-on-scroll">
-                        <h3 class="text-2xl font-bold mb-2">Tier 1 Support Representative</h3> <!-- Removed text-teal-400 -->
-                        <p class="text-gray-400 mb-4">BigCommerce | Austin, TX | March 2015 – May 2016</p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li>Managed a high volume of inbound support calls (80-90 calls/day) for a diverse range of BigCommerce merchants, from small businesses to multi-million dollar enterprises.</li>
-                            <li>Consistently maintained a positive NPS of at least 97% satisfaction for issue resolution, reflecting exceptional customer service and problem-solving abilities.</li>
-                            <li>Reported and tracked platform bugs with the Engineering team via Jira, and utilized Salesforce for ticket management.</li>
-                        </ul>
-                    </div>
-                </div>
+            <!-- This is where the React Journey Carousel will be mounted -->
+            <div id="react-journey-root" class="animate-on-scroll">
+                <!-- React content will be rendered here -->
             </div>
         </div>
     </section>
 
-    <!-- My Toolkit (Skills) Section -->
+    <!-- My Toolkit (Skills) Section - Reverted to static content -->
     <section id="skills" class="py-20 md:py-32">
-        <div class="max-w-screen-xl mx-auto px-6"> <!-- Removed flex-col h-full and flex-grow overflow-y-hidden from parent divs -->
+        <div class="max-w-screen-xl mx-auto px-6">
             <h2 class="section-heading animate-on-scroll flex-shrink-0">My Toolkit</h2>
             <div> 
                 <div class="grid md:grid-cols-2 gap-10 text-lg">
                     <div class="card animate-on-scroll">
-                        <h3 class="text-2xl font-bold mb-4">E-commerce & Platform Wizardry</h3> <!-- Removed text-teal-400 -->
+                        <h3 class="text-2xl font-bold mb-4">E-commerce & Platform Wizardry</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>BigCommerce (SME: Stencil, Catalyst)</li>
                             <li>Shopify (familiarity with platform functionality)</li>
@@ -146,7 +99,7 @@
                         </ul>
                     </div>
                     <div class="card animate-on-scroll">
-                        <h3 class="text-2xl font-bold mb-4">Tech & Troubleshooting Superpowers</h3> <!-- Removed text-teal-400 -->
+                        <h3 class="text-2xl font-bold mb-4">Tech & Troubleshooting Superpowers</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>APIs (BigCommerce v2/v3, GraphQL, RESTful)</li>
                             <li>API Traffic Verification & Troubleshooting</li>
@@ -159,8 +112,8 @@
                             <li>HTML, CSS, JavaScript (understanding for troubleshooting/UAT)</li>
                         </ul>
                     </div>
-                    <div class="card animate-on-scroll"> <!-- Removed inline style, will be handled by CSS -->
-                        <h3 class="text-2xl font-bold mb-4">People & Process Power-Ups</h3> <!-- Removed text-teal-400 -->
+                    <div class="card animate-on-scroll">
+                        <h3 class="text-2xl font-bold mb-4">People & Process Power-Ups</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>Complex Troubleshooting & Strategic Thinking</li>
                             <li>Technical Liaison & Communication</li>
@@ -177,25 +130,25 @@
     </section>
 
     <!-- My Adventures (Passions) Section -->
-    <section id="passions" class="py-20 md:py-32"> <!-- Removed bg-gray-900, now handled by CSS -->
+    <section id="passions" class="py-20 md:py-32">
         <div class="max-w-screen-xl mx-auto px-6">
             <h2 class="section-heading animate-on-scroll">My Adventures Beyond Work</h2>
             <div class="grid md:grid-cols-3 gap-10 text-lg">
                 <div class="card text-center animate-on-scroll">
-                    <h3 class="text-2xl font-bold mb-4">Cycling Obsession 🚴‍♂️</h3> <!-- Removed text-teal-400 -->
+                    <h3 class="text-2xl font-bold mb-4">Cycling Obsession 🚴‍♂️</h3>
                     <p class="mb-4 text-gray-300">
                         Whether it's hitting the gravel, shredding trails, or cruising fixed-gear style, I live for two wheels. It's where I find my flow, push my limits, and connect with the world around me.
                     </p>
                     <a href="https://www.strava.com/athletes/6709492" target="_blank" class="link-style strava-link">See my rides on Strava!</a>
                 </div>
                 <div class="card text-center animate-on-scroll">
-                    <h3 class="text-2xl font-bold mb-4">Great Outdoors ⛰️</h3> <!-- Removed text-teal-400 -->
+                    <h3 class="text-2xl font-bold mb-4">Great Outdoors ⛰️</h3>
                     <p class="mb-4 text-gray-300">
                         When I'm not on the bike, you'll often find me exploring off-grid. There's nothing quite like fresh air, wide-open spaces, and the quiet of nature to reset and recharge.
                     </p>
                 </div>
                 <div class="card text-center animate-on-scroll">
-                    <h3 class="text-2xl font-bold mb-4">Drumming Since '03 🥁</h3> <!-- Removed text-teal-400 -->
+                    <h3 class="text-2xl font-bold mb-4">Drumming Since '03 🥁</h3>
                     <p class="mb-4 text-gray-300">
                         I've been a drummer since I was 13, and it's a huge part of who I am. Laying down a beat is my creative outlet, a way to express myself, and a fantastic way to unwind.
                     </p>
@@ -213,10 +166,10 @@
                     Ready to chat about e-commerce, tech, or maybe even bikes and drumming? I'm always open to new connections and opportunities.
                 </p>
                 <p class="mb-2">
-                    <span class="font-semibold">Email:</span> <a href="mailto:Damunoz32@gmail.com" class="link-style">Damunoz32@gmail.com</a> <!-- Removed text-teal-400 -->
+                    <span class="font-semibold">Email:</span> <a href="mailto:Damunoz32@gmail.com" class="link-style">Damunoz32@gmail.com</a>
                 </p>
                 <p class="mb-4">
-                    <span class="font-semibold">LinkedIn:</span> <a href="www.linkedin.com/in/dante-munoz-86433190" target="_blank" class="link-style">My LinkedIn Profile</a> <!-- Removed text-teal-400 -->
+                    <span class="font-semibold">LinkedIn:</span> <a href="www.linkedin.com/in/dante-munoz-86433190" target="_blank" class="link-style">My LinkedIn Profile</a>
                 </p>
                 <p class="text-sm text-gray-500 mt-8">
                     &copy; 2025 Dante Munoz. All rights reserved.
@@ -269,8 +222,131 @@
                     });
                 });
             }
-            // --- End New JavaScript ---
+            // --- End New JavaScript --
         });
+    </script>
+
+    <!-- React and ReactDOM CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX transformation in browser (for learning purposes) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Mount React Component for Journey Carousel -->
+    <script type="text/babel">
+        // Data for your journey entries
+        const journeyData = [
+            {
+                id: 'journey1',
+                title: "Senior Marketplace Operations Manager",
+                date: "BigCommerce | Remote | June 2020 – July 2025",
+                responsibilities: [
+                    "Spearheaded the launch of ~45 apps & 12 themes annually, ensuring full compliance & functionality.",
+                    "Built out key internal review processes for Accessibility & Catalyst compatibility, boosting marketplace quality.",
+                    "Led weekly Jira triages for Partner Theme issues, streamlining resolutions with partners.",
+                    "Managed theme updates via GitHub & Launchbay, ensuring smooth production deployments.",
+                    "Served as SME for Stencil & Catalyst themes, handling ~70% of team's theme projects.",
+                    "Conducted granular UAT, proactively identifying & reporting bugs before deployment.",
+                    "Troubleshot & verified API calls (v2/v3/GraphQL), ensuring robust app/theme performance."
+                ]
+            },
+            {
+                id: 'journey2',
+                title: "Product Support Engineer",
+                date: "BigCommerce | Austin, TX | January 2018 – June 2020",
+                responsibilities: [
+                    "Acted as key liaison between Engineering & Merchants, translating complex tech issues.",
+                    "Collaborated directly with multiple Product and Engineering teams to report, troubleshoot, and resolve complex platform bugs and technical matters, leveraging extensive Jira experience.",
+                    "Utilized internal reporting and analytics tools including Kibana 5, Tableau, Contentful, and Algolia Search to investigate and address advanced merchant or partner support issues."
+                ]
+            },
+            {
+                id: 'journey3',
+                title: "Tier 2 Support Representative",
+                date: "BigCommerce | Austin, TX | May 2016 – January 2018",
+                responsibilities: [
+                    "Resolved 30-50 escalated, email-based support tickets weekly and priority phone calls from Enterprise-level Merchants, demonstrating advanced problem-solving and efficiency.",
+                    "Provided expert technical support to BigCommerce's Technical Partners (app developers), specifically addressing complex questions and issues related to v2/v3 APIs."
+                ]
+            },
+            {
+                id: 'journey4',
+                title: "Tier 1 Support Representative",
+                date: "BigCommerce | Austin, TX | March 2015 – May 2016",
+                responsibilities: [
+                    "Managed a high volume of inbound support calls (80-90 calls/day) for a diverse range of BigCommerce merchants, from small businesses to multi-million dollar enterprises.",
+                    "Consistently maintained a positive NPS of at least 97% satisfaction for issue resolution, reflecting exceptional customer service and problem-solving abilities.",
+                    "Reported and tracked platform bugs with the Engineering team via Jira, and utilized Salesforce for ticket management."
+                ]
+            }
+        ];
+
+        // Component for a single journey card
+        function JourneyCard({ journey, isTop, onClick }) {
+            return (
+                <div 
+                    className={`journey-card ${isTop ? 'is-top' : ''}`}
+                    onClick={isTop ? onClick : null} // Only clickable if it's the top card
+                    style={{ zIndex: isTop ? 10 : 1 }} // Ensure top card is always on top
+                >
+                    <h3 className="text-2xl font-bold mb-2">{journey.title}</h3>
+                    <p className="text-gray-400 mb-4">{journey.date}</p>
+                    <ul className="list-disc list-inside space-y-2 text-gray-300">
+                        {journey.responsibilities.map((resp, index) => (
+                            <li key={index}>{resp}</li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        // Main Journey Carousel Component
+        function JourneyCarousel() {
+            // State to manage the order of journey entries in the stack
+            const [currentJourneyCards, setCurrentJourneyCards] = React.useState(journeyData);
+
+            // Function to move the top card to the back of the stack
+            const cycleCard = () => {
+                // Add a class to trigger the animation
+                const topCardElement = document.querySelector('.journey-card.is-top');
+                if (topCardElement) {
+                    topCardElement.classList.add('is-moving-to-back');
+                    // Remove the card from the DOM after the animation completes
+                    setTimeout(() => {
+                        const [firstCard, ...restOfCards] = currentJourneyCards;
+                        setCurrentJourneyCards([...restOfCards, firstCard]);
+                        topCardElement.classList.remove('is-moving-to-back'); // Clean up the class
+                    }, 500); // Match animation duration
+                }
+            };
+
+            // Render the carousel
+            return (
+                <div className="journey-carousel-container">
+                    <div className="carousel-stack-journey">
+                        {currentJourneyCards.map((journey, index) => (
+                            // Only render a few cards for visual stacking effect
+                            index < 3 && (
+                                <JourneyCard 
+                                    key={journey.id} 
+                                    journey={journey} 
+                                    isTop={index === 0}
+                                    onClick={cycleCard}
+                                />
+                            )
+                        ))}
+                    </div>
+                    <button onClick={cycleCard} className="cycle-button-journey btn-primary">
+                        Next
+                    </button>
+                </div>
+            );
+        }
+
+        // Mount the React component
+        const domNode = document.getElementById('react-journey-root');
+        const root = ReactDOM.createRoot(domNode);
+        root.render(React.createElement(JourneyCarousel));
     </script>
 
 </body>
