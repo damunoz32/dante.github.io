@@ -201,32 +201,36 @@ section::before {
     transition: background-color 0.5s ease; /* Added for smoother overlay transition */
 }
 
-/* Background images for individual sections (re-added) */
+/* Background images for individual sections */
 #hero-section {
-    background-image: url('assets/hero_background.JPEG'); /* Updated path */
+    background-image: url('assets/hero_background.JPEG');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Added */
     background-attachment: fixed; /* Re-added for parallax effect on desktop */
 }
 
 #about {
-    background-image: url('assets/about_background.jpg'); /* Updated path */
+    background-image: url('assets/about_background.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Added */
     background-attachment: fixed;
 }
 
 #journey {
-    background-image: url('assets/journey_2_background.png'); /* Updated path */
+    background-image: url('assets/journey_2_background.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Added */
     background-attachment: fixed;
 }
 
 #skills {
-    background-image: url('assets/skills_background.jpg'); /* Updated path */
+    background-image: url('assets/skills_background.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Added */
     background-attachment: fixed;
 }
 
@@ -359,16 +363,18 @@ section::before {
 }
 
 #passions {
-    background-image: url('assets/passions_background.JPEG'); /* Updated path */
+    background-image: url('assets/passions_background.JPEG');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Added */
     background-attachment: fixed;
 }
 
 #contact {
-    background-image: url('assets/connect_background.jpg'); /* Updated path */
+    background-image: url('assets/connect_background.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Added */
     background-attachment: fixed;
 }
 
