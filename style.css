@@ -1,17 +1,15 @@
 html {
-    /* height: 100%; Removed for regular scrolling */
     overflow-y: auto; /* Allow regular vertical scrolling */
     scroll-behavior: smooth; /* Keep smooth scroll for anchor links */
-    /* scroll-snap-type: y mandatory; Removed for regular scrolling */
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #1a202c; /* Deep charcoal/dark blue for background */
-    color: #e2e8f0; /* Light gray for main text */
+    background-color: #748873; /* Dark muted green */
+    color: #F8F8F8; /* Almost white for main text */
     line-height: 1.6;
     /* Subtle animated background for the entire body */
-    background-image: radial-gradient(circle at center, rgba(74, 85, 104, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle at center, rgba(248, 248, 248, 0.05) 1px, transparent 1px); /* Using almost white for dots */
     background-size: 20px 20px; /* Size of the dots/pattern */
     animation: backgroundPan 60s linear infinite; /* Slow, continuous movement */
     overflow-x: hidden; /* Prevent horizontal scrollbar from animation */
@@ -36,7 +34,7 @@ body {
     margin-bottom: 3rem; /* mb-12 */
     letter-spacing: -0.025em; /* tracking-tight */
 
-    background-image: linear-gradient(to right, #63b3ed, #81e6d9); /* Blue to Teal gradient */
+    background-image: linear-gradient(to right, #D1A980, #E5E0D8); /* Muted light brown to very light beige gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -54,6 +52,12 @@ body {
         font-size: 3rem; /* md:text-5xl */
         line-height: 1;
     }
+}
+
+/*Simple padding to cleanup layout for nav links*/
+a.link-style.py-2.sm\:py-0.nav-link-item {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* Common style for elements that will animate on scroll */
@@ -82,22 +86,24 @@ body {
 
 
 .card {
-    background-color: #2d3748; /* bg-gray-800 */
+    background-color: #5A6B59; /* Slightly lighter green for card background */
     padding: 2rem; /* p-8 */
     border-radius: 1rem; /* rounded-2xl */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-    border: 1px solid #4a5568; /* border border-gray-700 */
+    border: 1px solid #90A08F; /* Lighter green border */
     transition: all 0.3s ease-in-out;
+    position: relative; /* Ensure z-index works correctly */
 }
 .card:hover {
-    border-color: #38b2ac; /* hover:border-teal-500 */
+    border-color: #D1A980; /* Muted light brown/tan for hover border */
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow on hover */
     transform: translateY(-5px);
+    z-index: 10; /* Bring hovered card to the front */
 }
 
 .btn-primary {
-    background-color: #38b2ac; /* bg-teal-500 */
-    color: #1a202c; /* text-gray-900 */
+    background-color: #D1A980; /* Muted light brown/tan for primary button */
+    color: #748873; /* Dark muted green for button text */
     padding: 1rem 2rem; /* px-8 py-4 */
     border-radius: 0.75rem; /* rounded-xl */
     font-weight: 700; /* font-bold */
@@ -106,35 +112,35 @@ body {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
 }
 .btn-primary:hover {
-    background-color: #4fd1c5; /* hover:bg-teal-400 */
+    background-color: #E5E0D8; /* Very light beige/off-white for hover */
     transform: translateY(-2px);
 }
 
 .link-style {
-    color: #63b3ed; /* text-blue-400 */
+    color: #D1A980; /* Muted light brown/tan for links */
     font-weight: 500; /* font-medium */
     transition: color 0.3s ease-in-out;
 }
 .link-style:hover {
-    color: #90cdf4; /* hover:text-blue-300 */
+    color: #E5E0D8; /* Very light beige/off-white for hover */
 }
 
 /* custom text styling for #skills block */
-#skills > div > div.card.md\:col-span-2.animate-on-scroll.is-visible > ul {
+/* Removed specific text-align: center rules for ul and h3 within the md:col-span-2 card */
+/* #skills > div > div.card.md\:col-span-2.animate-on-scroll.is-visible > ul {
     text-align: center;
 }
-
 #skills > div > div.card.md\:col-span-2.animate-on-scroll.is-visible > h3 {
     text-align: center;
-}
+} */
 
 /* Specific style for Strava link */
 .strava-link {
-    color: #fb923c; /* A nice orange color (Tailwind orange-400) */
+    color: #fb923c; /* Existing orange, fits well */
 }
 
 .strava-link:hover {
-    color: #f97316; /* A slightly darker orange for hover (Tailwind orange-500) */
+    color: #f97316; /* Existing darker orange, fits well */
 }
 
 /* Subtle animation for hero text */
@@ -152,30 +158,38 @@ body {
 
 /* Additional styles to match the overall theme */
 h3 {
-    color: #38b2ac; /* text-teal-400 for card titles */
+    color: #D1A980; /* Muted light brown/tan for card titles */
 }
 ul.list-disc li {
-    color: #cbd5e0; /* text-gray-300 for list items */
+    color: #F8F8F8; /* Almost white for list items */
 }
 p {
-    color: #cbd5e0; /* text-gray-300 for general paragraphs */
+    color: #F8F8F8; /* Almost white for general paragraphs */
 }
 .text-gray-400 {
-    color: #a0aec0; /* Specific gray for dates/subtext */
+    color: #A3B4A2; /* Muted warm gray/green for dates/subtext */
 }
-.font-semibold.text-teal-400 {
-    color: #38b2ac; /* Specific teal for bold labels in contact */
+.font-semibold.text-teal-400 { /* This class name is a bit of a misnomer now, but targeting it directly */
+    color: #D1A980; /* Muted light brown/tan for bold labels in contact */
 }
 
-/* All sections - reverted to non-snap behavior */
+/* All sections */
 section {
-    /* height: 100vh; Removed for regular scrolling */
-    /* scroll-snap-align: start; Removed for regular scrolling */
     position: relative; /* Needed for pseudo-element overlay and z-index */
     z-index: 0; /* Ensure content is above overlay */
     border-radius: 1rem; /* Added for smoother transition */
     overflow-y: hidden; /* Changed to hidden to remove internal section scrolling */
     overflow-x: hidden; /* Prevent horizontal scrolling within section */
+    min-height: 100vh; /* Re-added to make sections at least viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically within the section */
+}
+
+/* Add some padding to the grid container within sections to prevent clipping on hover */
+section .grid {
+    padding-top: 10px; /* Add space at the top for the translateY effect */
+    padding-bottom: 5px; /* Add a little at the bottom too for consistency */
 }
 
 /* Overlay for readability - apply to all sections with background images */
@@ -186,7 +200,7 @@ section::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay (kept for contrast) */
     z-index: -1; /* Place behind content */
     border-radius: inherit; /* Inherit border-radius from parent if any */
     transition: background-color 0.5s ease; /* Added for smoother overlay transition */
@@ -194,10 +208,10 @@ section::before {
 
 /* Background images for individual sections (re-added) */
 #hero-section {
-    background-image: url('');
+    background-image: url('https://i.postimg.cc/0QsyL693/DSC09968.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Re-added for parallax effect */
+    background-attachment: fixed; /* Re-added for parallax effect on desktop */
 }
 
 #about {
@@ -208,18 +222,22 @@ section::before {
 }
 
 #journey {
-    background-image: url('https://i.postimg.cc/6Qf5dWXN/DSC06035.jpg');
+    background-image: url('https://i.postimg.cc/fTBRvJsK/grinding-tuesdays-edited.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
 #skills {
-    background-image: url('https://i.postimg.cc/3JyG2cxx/arnold-francisca-3u-A-f-Tfb3-Es-unsplash.jpg');
+    background-image: url('https://i.postimg.cc/nLwcBLyW/chanhee-lee-MADezathl-Zo-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
+
+#skills > div > div > div{
+    text-align: center;
+} 
 
 #passions {
     background-image: url('https://i.postimg.cc/s2S26PC7/IMG-1887.jpg');
@@ -233,4 +251,53 @@ section::before {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+/* Media query to disable background-attachment: fixed on smaller screens */
+@media (max-width: 767px) { /* Applies to screens smaller than 768px (Tailwind's sm breakpoint) */
+    #hero-section, #about, #journey, #skills, #passions, #contact {
+        background-attachment: scroll !important; /* Override fixed to scroll on mobile */
+    }
+}
+
+/* Removed fixed header padding from hero-section as header is no longer fixed */
+#hero-section {
+    padding-top: 0; 
+}
+
+/* Navigation Links Spacing */
+@media (min-width: 640px) { /* sm breakpoint and up */
+    .nav-links .nav-link-item {
+        margin: 0 1.5rem; /* Increased horizontal spacing between links */
+    }
+    .nav-links .nav-link-item:first-child {
+        margin-left: 0; /* No left margin for the first link */
+    }
+    .nav-links .nav-link-item:last-child {
+        margin-right: 0; /* No right margin for the last link */
+    }
+}
+
+.nav-separator {
+    display: none; /* Hidden by default for mobile */
+    vertical-align: middle; /* Align with text vertically */
+}
+
+@media (min-width: 640px) { /* sm breakpoint and up */
+    .nav-separator {
+        display: inline-block;
+        width: 2px; /* The actual bar width */
+        height: 1.25rem; /* Roughly text-lg height, adjust if needed */
+        
+        /* 3D/Embossed effect */
+        background-image: linear-gradient(to bottom, 
+            rgba(248, 248, 248, 0.2), /* Top highlight (using new main text color) */
+            rgba(248, 248, 248, 0.05), /* Middle fade (using new main text color) */
+            rgba(116, 136, 115, 0.25) /* Bottom shadow (using new body background color) */
+        );
+        box-shadow: 
+            0 0.5px 0 rgba(248, 248, 248, 0.1) inset, /* Top inner highlight */
+            0 -0.5px 0 rgba(116, 136, 115, 0.1) inset; /* Bottom inner shadow */
+        border-radius: 0.5px; /* Slightly rounded edges for the bar */
+    }
 }

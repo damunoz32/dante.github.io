@@ -19,19 +19,24 @@
             <!-- Container for hamburger and title on small screens -->
             <div class="flex items-center">
                 <!-- Hamburger Menu Button (visible on small screens only) -->
-                <button id="menu-toggle" class="sm:hidden text-teal-400 text-3xl focus:outline-none mr-4">
+                <button id="menu-toggle" class="sm:hidden text-amber-100 text-3xl focus:outline-none mr-4">
                     ☰
                 </button>
-                <h1 class="text-3xl font-extrabold text-teal-400">Dante Munoz</h1>
+                <h1 class="text-3xl font-extrabold text-amber-100/90">Dante Munoz</h1>
             </div>
             
             <!-- Navigation Links (hidden on small screens by default, flex on larger screens) -->
-            <div id="nav-links" class="hidden sm:flex flex-col sm:flex-row sm:space-x-4 text-lg mt-4 sm:mt-0 w-full sm:w-auto items-center">
-                <a href="#about" class="link-style py-2 sm:py-0">About</a>
-                <a href="#journey" class="link-style py-2 sm:py-0">My Journey</a>
-                <a href="#skills" class="link-style py-2 sm:py-0">My Toolkit</a>
-                <a href="#passions" class="link-style py-2 sm:py-0">My Adventures</a>
-                <a href="#contact" class="link-style py-2 sm:py-0">Connect</a>
+            <!-- Removed sm:space-x-4 here to manage spacing with separators and nav-link-item class -->
+            <div id="nav-links" class="hidden sm:flex flex-col sm:flex-row text-lg mt-4 sm:mt-0 w-full sm:w-auto items-center">
+                <a href="#about" class="link-style py-2 sm:py-0 nav-link-item">About</a>
+                <span class="nav-separator"></span>
+                <a href="#journey" class="link-style py-2 sm:py-0 nav-link-item">My Journey</a>
+                <span class="nav-separator"></span>
+                <a href="#skills" class="link-style py-2 sm:py-0 nav-link-item">My Toolkit</a>
+                <span class="nav-separator"></span>
+                <a href="#passions" class="link-style py-2 sm:py-0 nav-link-item">My Adventures</a>
+                <span class="nav-separator"></span>
+                <a href="#contact" class="link-style py-2 sm:py-0 nav-link-item">Connect</a>
             </div>
         </nav>
     </header>
@@ -39,7 +44,7 @@
     <!-- Hero Section -->
     <section id="hero-section" class="relative text-white py-24 md:py-40 text-center rounded-b-3xl shadow-2xl overflow-hidden">
         <div class="max-w-screen-md mx-auto px-6 z-10 relative">
-            <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-down text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-down text-transparent bg-clip-text bg-gradient-to-r from-[#D1A980] to-[#E5E0D8]">
                 Hey there!
             </h2>
             <p class="text-xl md:text-2xl font-light mb-10 animate-fade-in-up text-gray-300">
@@ -70,7 +75,7 @@
     <section id="journey" class="py-20 md:py-32">
         <div class="max-w-screen-xl mx-auto px-6 flex flex-col h-full">
             <h2 class="section-heading animate-on-scroll flex-shrink-0">My Professional Journey</h2>
-            <div class="flex-grow overflow-y-auto pr-4"> <!-- Added pr-4 for scrollbar spacing -->
+            <div class="flex-grow overflow-y-hidden"> 
                 <div class="grid lg:grid-cols-2 gap-10">
 
                     <!-- Senior Marketplace Operations Manager -->
@@ -128,7 +133,7 @@
     <section id="skills" class="py-20 md:py-32">
         <div class="max-w-screen-xl mx-auto px-6 flex flex-col h-full">
             <h2 class="section-heading animate-on-scroll flex-shrink-0">My Toolkit</h2>
-            <div class="flex-grow overflow-y-auto pr-4"> <!-- Added pr-4 for scrollbar spacing -->
+            <div class="flex-grow overflow-y-hidden"> 
                 <div class="grid md:grid-cols-2 gap-10 text-lg">
                     <div class="card animate-on-scroll">
                         <h3 class="text-2xl font-bold text-teal-400 mb-4">E-commerce & Platform Wizardry</h3>
@@ -155,7 +160,7 @@
                             <li>HTML, CSS, JavaScript (understanding for troubleshooting/UAT)</li>
                         </ul>
                     </div>
-                    <div class="card md:col-span-2 animate-on-scroll">
+                    <div class="card animate-on-scroll md:col-span-2 mx-auto" style="max-width: 50%;"> <!-- Re-added md:col-span-2 and added mx-auto and max-width -->
                         <h3 class="text-2xl font-bold text-teal-400 mb-4">People & Process Power-Ups</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>Complex Troubleshooting & Strategic Thinking</li>
