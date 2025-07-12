@@ -206,15 +206,15 @@ section::before {
     background-image: url('assets/hero_background.JPEG');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Added */
-    background-attachment: fixed; /* Re-added for parallax effect on desktop */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #about {
     background-image: url('assets/about_background.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Added */
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -230,7 +230,7 @@ section::before {
     background-image: url('assets/skills_background.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Added */
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -255,127 +255,103 @@ section::before {
 /* Removed styles for the React Skills Widget */
 /* .filter-btn, .filter-btn:hover, .filter-btn-active, .filter-btn-active:hover, .skill-item-card, .skill-item-card:hover are removed */
 
-/* Styles for the React Journey Carousel */
-.journey-carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-top: 2rem; /* Space for stacked cards */
-    padding-bottom: 2rem;
-    margin-top: 3rem; /* Added margin-top to push it down from the section heading */
+/* Styles for the React Journey Carousel - REMOVED */
+
+/* Styles for the new React Journey Timeline */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-100px); /* Start off-screen to the left */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.carousel-stack-journey {
-    position: relative;
-    width: 90%; /* Take most of the width */
-    max-width: 700px; /* Max width for desktop cards */
-    min-height: 550px; /* Re-introducing fixed height for desktop */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    /* Removed transition for height as it's now static */
-}
-
-/* Mobile adjustments for carousel-stack-journey and background image */
-@media (max-width: 767px) { /* For screens smaller than 768px (mobile) */
-    .carousel-stack-journey {
-        min-height: 900px; /* Increased minimum height for mobile to prevent overlap with longest card */
-        width: 95%; /* Slightly wider on mobile */
-    }
-    .journey-card {
-        padding: 1.5rem; /* Slightly less padding on mobile cards */
-    }
-
-    /* Specific background adjustments for #journey on mobile */
-    #journey {
-        background-size: cover !important; /* Reverted to cover */
-        background-repeat: no-repeat !important; /* Prevent repeating if space remains */
-        background-position: center !important; /* Center the contained image */
-        /* Removed background-color here */
-        background-attachment: scroll !important; /* Ensure it scrolls on mobile */
-    }
-}
-
-
-.journey-card {
-    position: absolute;
-    width: 100%; /* Full width within its container */
-    background-color: #5A6B59; /* Card background color */
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid #90A08F;
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0s; /* Add z-index transition to make it immediate */
-    display: flex;
-    flex-direction: column; /* Stack title, date, responsibilities vertically */
-    align-items: flex-start; /* Align content to the left */
-    text-align: left;
-    color: #F8F8F8; /* Text color */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-/* Styles for cards in the stack (behind the top card) */
-.journey-card:nth-child(1) { /* This will be the top card */
-    transform: translateY(0px) scale(1);
+.timeline-item.is-visible {
     opacity: 1;
-    z-index: 3;
+    transform: translateX(0);
 }
 
-.journey-card:nth-child(2) { /* Card directly behind the top */
-    transform: translateY(15px) scale(0.98); /* Slightly more offset and smaller */
-    opacity: 0.8;
-    z-index: 2;
+/* For items on the right side of the timeline */
+.timeline-item.flex-row .card {
+    transform: translateX(100px); /* Start off-screen to the right */
 }
 
-.journey-card:nth-child(3) { /* Card further behind */
-    transform: translateY(30px) scale(0.96); /* Even more offset and smaller */
-    opacity: 0.6;
-    z-index: 1;
+.timeline-item.flex-row.is-visible .card {
+    transform: translateX(0);
 }
 
-/* Animation for cycling a card to the back */
-.journey-card.is-moving-to-back {
-    animation: cycleJourneyCard 0.5s forwards;
+.mobile-timeline-line {
+    height: 94% !important; /* Apply this globally to override h-full */
 }
 
-@keyframes cycleJourneyCard {
-    0% {
-        transform: translateY(0px) scale(1);
-        opacity: 1;
-        z-index: 10; /* Keep on top during animation */
+/* Bike Emoji Styling */
+.bike-emoji {
+    position: absolute;
+    left: 50%; /* Center horizontally on the line by default */
+    transform: translateX(-50%) translateY(-50%); /* Center the emoji itself vertically and horizontally */
+    font-size: 2.5rem; /* Adjust size as needed */
+    z-index: 20; /* Ensure it's above the line and dots */
+    transition: top 0.1s linear, transform 0.3s ease-out; /* Smooth vertical movement, smoother horizontal snap */
+    pointer-events: none; /* Allow clicks to pass through */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Subtle glow */
+}
+
+.bike-emoji.float-left {
+    transform: translateX(calc(-50% - 40px)) translateY(-50%); /* Shift left from center */
+}
+
+.bike-emoji.float-right {
+    transform: translateX(calc(-50% + 40px)) translateY(-50%); /* Shift right from center */
+}
+
+
+/* Mobile adjustments for timeline */
+@media (max-width: 767px) { /* For screens smaller than 768px (mobile) */
+    .timeline-item {
+        flex-direction: column !important; /* Stack items vertically */
+        align-items: center !important; /* Center content */
+        text-align: center !important; /* Center text */
+        transform: translateY(50px); /* Animate from bottom on mobile */
     }
-    50% {
-        transform: translateY(-80px) scale(0.9) translateX(100%); /* Move up and off to the right */
-        opacity: 0;
-        z-index: 10;
+
+    .timeline-item.is-visible {
+        transform: translateY(0);
     }
-    51% {
-        z-index: 0; /* Send to back instantly after moving off screen */
-        transform: translateY(30px) scale(0.96); /* Reset to back-of-stack position */
-        opacity: 0;
+
+    .timeline-item .card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 95% !important; /* Full width on mobile */
+        transform: translateY(50px); /* Animate card from bottom on mobile */
     }
-    100% {
-        transform: translateY(30px) scale(0.96); /* Final position for the back card */
-        opacity: 0.6;
-        z-index: 1;
+
+    .timeline-item.is-visible .card {
+        transform: translateY(0);
+    }
+
+    .mobile-timeline-line {
+        left: 50% !important; /* Keep line centered */
+        transform: translateX(-50%) !important;
+        /* height: 95% !important; -- This line is now redundant as it's applied globally */
+    }
+
+    .mobile-timeline-dot {
+        left: 50% !important; /* Keep dot centered */
+        transform: translateX(-50%) !important;
+    }
+    .bike-emoji {
+        display: none; /* Hide bike emoji on mobile */
     }
 }
 
-.cycle-button-journey {
-    /* Uses existing btn-primary styles */
-    /* Additional styling specific to this button if needed */
-    margin-top: 2rem; /* Space between carousel and button */
+
+.cycle-button-journey { /* This button is no longer used with the timeline */
+    display: none;
 }
 
 #passions {
     background-image: url('assets/passions_background.JPEG');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Added */
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -383,13 +359,13 @@ section::before {
     background-image: url('assets/connect_background.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Added */
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 /* Media query to disable background-attachment: fixed on smaller screens */
 @media (max-width: 767px) { /* Applies to screens smaller than 768px (Tailwind's sm breakpoint) */
-    #hero-section, #about, #skills, #passions, #contact { /* Removed #journey from here as it has its own rule */
+    #hero-section, #about, #journey, #skills, #passions, #contact {
         background-attachment: scroll !important; /* Override fixed to scroll on mobile */
     }
 }
